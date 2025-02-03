@@ -7,10 +7,10 @@ const Footer = () => {
       <div className=" flex items-center justify-center gap-4">
         <h3 className="text-2xl text-gray-200 font-semibold">Aushah Gowhar</h3>
         <div className="flex flex-row gap-6 items-center justify-center text-gray-400 text-4xl p-0 mt-0">
-          <a href="#">
+          <a href="https://github.com/aushah1">
             <FaGithubSquare />
           </a>
-          <a href="#">
+          <a href="www.linkedin.com/in/aushahgw">
             <FaLinkedin />
           </a>
         </div>
