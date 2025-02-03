@@ -30,11 +30,11 @@ const Hero = () => {
           transition={{ duration: 1 }}>
           <TypeAnimation
             sequence={[
-              "Fullstack Dev",
+              "Frontend Dev",
               1000,
-              "Webdesigner",
+              "Web Designer",
               1000,
-              "Consultant",
+              "React Developer",
               1000,
             ]}
             speed={50}

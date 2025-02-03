@@ -27,7 +27,6 @@ const skills = [
         icon: <DiJavascript1 className="text-yellow-500" />,
       },
       { name: "React", icon: <DiReact className="text-blue-500" /> },
-      { name: "React", icon: <DiReact className="text-blue-500" /> },
     ],
   },
   // {
