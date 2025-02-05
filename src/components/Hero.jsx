@@ -2,26 +2,25 @@ import React from "react";
 import profilepic from "../assets/profpic.png";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
-import {
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineLink,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
-import {
-  DiCss3,
-  DiHtml5,
-  DiJavascript1,
-  DiNodejsSmall,
-  DiReact,
-} from "react-icons/di";
+import { AiOutlineGithub } from "react-icons/ai";
+import { DiCss3, DiHtml5, DiJavascript1, DiReact } from "react-icons/di";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { RiTailwindCssLine } from "react-icons/ri";
-
+import { FaLinkedinIn } from "react-icons/fa";
+const techStack = [
+  { name: "HTML5", icon: <DiHtml5 className="text-orange-600" /> },
+  { name: "CSS3", icon: <DiCss3 className="text-blue-600" /> },
+  { name: "JavaScript", icon: <DiJavascript1 className="text-yellow-500" /> },
+  { name: "React", icon: <DiReact className="text-cyan-500" /> },
+  {
+    name: "Tailwind CSS",
+    icon: <RiTailwindCssLine className="text-blue-400" />,
+  },
+];
 const Hero = () => {
   return (
-    <div className="mt-24 max-w-[1200px] mx-auto relative" id="about">
+    <div className="mt-24 mx-auto relative" id="about">
       <div className="grid md:grid-cols-2 place-items-center gap-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -57,7 +56,7 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-gray-300 max-w-[300px] md:max-w-[500px] md:text-xl text-lg mb-6">
+            className="text-gray-300 md:text-xl text-lg mb-6">
             I'm a frontend web developer focused on crafting visually engaging,
             responsive, and user-centric web applications. With a passion for
             clean design and optimal performance, I specialize in creating
@@ -80,8 +79,8 @@ const Hero = () => {
                 boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)",
               }}
               onClick={() => window.open("/cv.pdf", "_blank")} // Open CV in a new tab
-              className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-                                     border-purple-400 rounded-xl">
+              className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto px-5 py-2 border
+                                     border-purple-400 rounded-md">
               <a href="/path/to/cv.pdf" download="Aushah_Gowhar_CV.pdf">
                 Open CV
               </a>
@@ -97,7 +96,7 @@ const Hero = () => {
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://www.linkedin.com/in/aushahgw">
-                <AiOutlineLinkedin />
+                <FaLinkedinIn />
               </motion.a>
             </div>
           </motion.div>
@@ -114,19 +113,64 @@ const Hero = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1, delay: 2 }}
-        className="flex flex-row text-7xl px-12 md:px-0 w-full justify-center items-center py-24">
-        <p className="text-gray-200 mr-6">My Tech Stack</p>
-        <DiHtml5 className="text-orange-600 mx-2" />
-        <DiCss3 className="text-blue-600 mx-2" />
-        <DiJavascript1 className="text-yellow-500 mx-2" />
-        <DiReact />
-        <RiTailwindCssLine className="text-blue-500 mx-2" />
-      </motion.div>
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        className="flex flex-col items-center justify-center py-24 md:px-0 w-full">
+        {/* Animated Heading */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+          className="text-gray-900 dark:text-gray-200 font-semibold text-3xl sm:text-4xl mb-10">
+          My Tech Stack 🚀
+        </motion.p>
 
+        {/* Tech Icons as Cards */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.8 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: {
+                staggerChildren: 0.2,
+                duration: 0.5,
+                ease: "easeOut",
+              },
+            },
+          }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-center">
+          {techStack.map((tech, index) => (
+            <motion.div
+              key={index}
+              viewport={{ once: false, threshold: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.5 },
+                visible: { opacity: 1, scale: 1 },
+              }}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 10px 20px rgba(0,0,0,0.2)",
+              }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col items-center justify-center p-6 rounded-lg bg-white dark:bg-gray-800 
+                       shadow-md dark:shadow-lg transition-all cursor-pointer"
+              style={{
+                transition: "box-shadow 0.3s ease-in-out",
+              }}>
+              <div className="text-6xl">{tech.icon}</div>
+              <p className="mt-3 text-gray-900 dark:text-gray-200 text-lg font-medium">
+                {tech.name}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
       <div className="absolute inset-0 hidden md:block">
         <ShinyEffect left={0} top={0} size={1400} />
       </div>

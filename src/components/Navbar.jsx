@@ -32,11 +32,18 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-opacity-70 backdrop-blur-md z-50">
+    <div className="fixed top-0 left-0 w-full bg-transparent backdrop-blur-sm z-50 border-b border-gray-900">
       <div
-        className="max-w-[1300px] mx-auto  flex justify-between text-gray-200
-        text-xl items-center px-12 h-20">
-        <a href="#">Aushah Gowhar</a>
+        className="px-4 md:px-8 lg:px-16 mx-auto  flex justify-between text-gray-200
+        text-xl items-center  h-20">
+        <div className="flex items-center gap-3">
+          <img src="/a.png" alt="" className="w-10 h-10 filter invert" />
+          <a
+            href="#"
+            className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
+            Aushah Gowhar
+          </a>
+        </div>
 
         <ul className="hidden md:flex gap-12 z-10 cursor-pointer">
           <li>

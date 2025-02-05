@@ -1,17 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
 import project5 from "../assets/project5.png";
-import { AiFillGithub, AiOutlineGithub } from "react-icons/ai";
-import Reveal from "./Reveal";
+import { AiOutlineGithub } from "react-icons/ai";
 
 const projects = [
   {
     img: project1,
-    title: "Project #1",
-    description: "UI for frontend development using React.",
+    title: "Netflix Clone",
+    description: "A UI clone of Netflix built using React.",
     links: {
       site: "https://aushah1.github.io/Netflix-clone/",
       github: "https://github.com/aushah1/Netflix-clone.git",
@@ -19,8 +19,8 @@ const projects = [
   },
   {
     img: project2,
-    title: "Project #2",
-    description: "A fullstack application built with Node.js and MongoDB.",
+    title: "Solstice",
+    description: "A fullstack app built with Node.js and MongoDB.",
     links: {
       site: "#",
       github: "https://github.com/aushah1/Solstice.git",
@@ -28,8 +28,8 @@ const projects = [
   },
   {
     img: project3,
-    title: "Project #3",
-    description: "An e-commerce platform with various features.",
+    title: "Twitter Clone",
+    description: "A Twitter-inspired social media platform.",
     links: {
       site: "https://aushah1.github.io/Twitter-Clone/",
       github: "https://github.com/aushah1/Twitter-Clone.git",
@@ -37,8 +37,8 @@ const projects = [
   },
   {
     img: project4,
-    title: "Project #4",
-    description: "A mobile-friendly application using React Native.",
+    title: "ShopSphere",
+    description: "A mobile-friendly shopping app built with React Native.",
     links: {
       site: "#",
       github: "https://github.com/aushah1/ShopSphere.git",
@@ -46,8 +46,8 @@ const projects = [
   },
   {
     img: project5,
-    title: "Project #5",
-    description: "A mobile-friendly application using React Native.",
+    title: "Sidcup Family Golf Clone",
+    description: "A web clone of Sidcup Family Golf's official website.",
     links: {
       site: "https://aushah1.github.io/Sidcup-Family-Golf-Clone/",
       github: "https://github.com/aushah1/Sidcup-Family-Golf-Clone.git",
@@ -57,44 +57,82 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <div className="max-w-[1000px] mx-auto p-6 md:my-20" id="portfolio">
-      <h2 className="text-3xl font-bold text-gray-200 mb-8">Portfolio</h2>
+    <div className="mx-auto p-6 md:my-20" id="portfolio">
+      {/* Section Title */}
+      <motion.h2
+        className="text-4xl font-extrabold text-gray-200 text-center mb-12"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}>
+        Portfolio
+      </motion.h2>
+
       {projects.map((project, index) => (
-        <Reveal>
-          <div
-            key={index}
-            className={`flex flex-col md:flex-row ${
-              index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            } mb-12`}>
-            <div className="w-full md:w-1/2 p-4">
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center">
-              <h3 className="text-2xl font-semibold text-gray-200 mb-4">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              <div className="flex space-x-4">
-                <a
-                  href={project.links.site}
-                  className="px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700
-                                        transition duration-300">
-                  View Site
-                </a>
-                <a
+        <motion.div
+          key={index}
+          className={`flex flex-col md:flex-row gap-8 items-center ${
+            index % 2 !== 0 ? "md:flex-row-reverse" : ""
+          } mb-16`}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: index * 0.2 }}>
+          {/* Project Image with Hover Effect */}
+          <motion.div
+            className="relative w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg group"
+            whileHover={{ scale: 1.05 }}>
+            <img
+              src={project.img}
+              alt={project.title}
+              className="w-full h-full object-cover rounded-lg"
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
+          </motion.div>
+
+          {/* Project Details */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h3 className="text-2xl font-semibold text-gray-200 mb-4">
+              {project.title}
+            </h3>
+            <p className="text-gray-400 mb-6">{project.description}</p>
+
+            {/* Buttons with Glassmorphism Effect */}
+            <div className="flex space-x-4">
+              {/* View Site Button */}
+              <motion.a
+                href={
+                  project.links.site !== "#" ? project.links.site : undefined
+                }
+                aria-label={`View ${project.title} website`}
+                className={`px-6 py-2 rounded-lg font-medium text-gray-200 transition duration-300 
+                  ${
+                    project.links.site === "#"
+                      ? "bg-gray-700 text-gray-400 cursor-not-allowed"
+                      : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:opacity-80"
+                  }`}
+                target={project.links.site !== "#" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}>
+                {project.links.site === "#" ? "No Live Demo" : "View Site"}
+              </motion.a>
+
+              {/* GitHub Button */}
+              {project.links.github !== "#" && (
+                <motion.a
                   href={project.links.github}
-                  className="px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700
-                                        transition duration-300">
-                  <AiOutlineGithub />
-                </a>
-              </div>
+                  aria-label={`View ${project.title} on GitHub`}
+                  className="px-4 py-2 bg-gray-800 text-gray-200 rounded-lg hover:bg-gray-700
+                      transition duration-300 flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}>
+                  <AiOutlineGithub className="text-xl" />
+                </motion.a>
+              )}
             </div>
           </div>
-        </Reveal>
+        </motion.div>
       ))}
     </div>
   );
