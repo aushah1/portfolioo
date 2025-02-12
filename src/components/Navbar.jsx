@@ -61,6 +61,11 @@ const Navbar = () => {
               Skills
             </Link>
           </li>
+          <li>
+            <Link to="contact" smooth={true} offset={50} duration={500}>
+              Contact
+            </Link>
+          </li>
         </ul>
 
         <div onClick={toggleNav} className="md:hidden z-50 text-gray-200">
@@ -91,6 +96,16 @@ const Navbar = () => {
                 offset={50}
                 duration={500}>
                 Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="skills"
+                onClick={closeNav}
+                smooth={true}
+                offset={50}
+                duration={500}>
+                Skills
               </Link>
             </li>
             <li>
