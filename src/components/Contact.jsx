@@ -79,6 +79,7 @@ const Contact = () => {
               id="name"
               placeholder="Your Name ..."
               name="name"
+              required
               className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
             />
             <input
@@ -86,10 +87,12 @@ const Contact = () => {
               id="email"
               placeholder="Your Email ..."
               name="email"
+              required
               className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
             />
             <textarea
               name="message"
+              required
               id="textarea"
               cols="30"
               rows="4"
