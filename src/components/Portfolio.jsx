@@ -57,15 +57,31 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <div className="mx-auto p-6 md:my-20" id="portfolio">
+    <div className="mx-auto p-6 md:my-20" id="projects">
       {/* Section Title */}
-      <motion.h2
-        className="text-4xl font-extrabold text-gray-200 text-center mb-12"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}>
-        Portfolio
-      </motion.h2>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex flex-col items-center justify-center py-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="text-gray-900 dark:text-gray-100 font-semibold text-3xl sm:text-4xl mb-10 text-center">
+          MY RECENT <span>PROJECTS</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+          className="text-gray-900 dark:text-gray-100 font-medium text-lg text-center w-full lg:w-3/4">
+          Here are some of My Recent Projects where, I showcase My Skills
+          Responsive and visually appealing website and some clone projects of
+          populer webapp
+        </motion.p>
+      </motion.div>
 
       {projects.map((project, index) => (
         <motion.div

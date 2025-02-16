@@ -29,12 +29,12 @@ const skills = [
     ],
   },
   {
-    category: "Fullstack",
+    category: "Backend",
     technologies: [
       { name: "Node.js", icon: <DiNodejsSmall className="text-green-500" /> },
       { name: "MongoDB", icon: <DiMongodb className="text-green-600" /> },
       { name: "React", icon: <DiReact className="text-blue-500" /> },
-      { name: "GitHub", icon: <DiGithubBadge className="text-gray-600" /> },
+      { name: "GitHub", icon: <DiGithubBadge className="text-white" /> },
     ],
   },
 ];
@@ -56,14 +56,15 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="text-gray-900 dark:text-gray-100 font-semibold text-3xl sm:text-4xl mb-10 text-center">
-          My Skills 💻
+          MY SKILLS 💻
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           className="text-gray-900 dark:text-gray-100 font-medium text-lg text-center">
-          I have experience in both frontend and fullstack development.
+          My expertise is in both Frontend and Backend. Here are some My
+          Professional Skills that helps you to present yourself in online world
         </motion.p>
       </motion.div>
 

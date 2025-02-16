@@ -56,15 +56,25 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-gray-300 md:text-xl text-lg mb-6">
-            I'm a frontend web developer focused on crafting visually engaging,
-            responsive, and user-centric web applications. With a passion for
-            clean design and optimal performance, I specialize in creating
-            intuitive interfaces and interactive features. I stay up-to-date
-            with the latest trends and tools, striving to write clean,
-            maintainable code that enhances usability and solves real-world
-            problems. My goal is to deliver impactful projects through
-            collaboration and creative solutions.
+            className="text-gray-300 md:text-xl text-lg mb-6 flex flex-col  gap-4">
+            <p>Do you know what’s the #1 Hack that Top Brands do? </p>
+
+            <ul className="pl-4">
+              <li>● Apple Doesn't sell Phones, It Sells Status</li>
+              <li>● Nike Doesn’t Shoes, It Sells Emotions</li>
+            </ul>
+
+            <p>How are they Presenting their Brand?</p>
+            <p>
+              Through Creating Web sites that make customers happy about hitting
+              “Buy Now”.
+            </p>
+            <p>
+              {" "}
+              I’m Aushah Gowhar a professional Web designer & developer Expert
+              in crafting visually engaging and user-centric web applications.
+              Expert in React JS, Node JS and MongoDB.
+            </p>
           </motion.p>
 
           <motion.div

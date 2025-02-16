@@ -3,6 +3,8 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import Swal from "sweetalert2";
+import { AiOutlineGithub } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -45,21 +47,32 @@ const Contact = () => {
   return (
     <div className="px-6 max-w-[1000px] mx-auto md:my-12" id="contact">
       <Reveal>
+        <h3 className="text-4xl text-center font-semibold mb-5 text-white">
+          LET'S GET IN <span>TOUCH</span>
+        </h3>
         <div className="grid md:grid-cols-2 place-items-center">
           <div>
-            <div className="text-gray-300 my-3">
-              <h3 className="text-4xl font-semibold mb-5">
-                About <span>Me</span>
-              </h3>
+            <div className="text-gray-300 my-3 flex items-start justify-center gap-4 flex-col">
               <p className="text-justify leading-7 w-11/12 mx-auto">
-                I'm a frontend web developer passionate about crafting visually
-                engaging, responsive, and user-centric web applications. I
-                specialize in intuitive interfaces, interactive features, and
-                clean, maintainable code that enhances usability and solves
-                real-world problems. I stay updated with the latest trends to
-                deliver impactful projects through collaboration and creative
-                solutions.
+                You can contact me directly, visit my github and connect with me
+                on LinkedIn
               </p>
+              <p className="text-justify leading-7 w-11/12 mx-auto">
+                Feel free to Message me and work Together!
+              </p>
+              <div className="flex gap-6 flex-row text-3xl md:text-3xl text-purple-400 z-20 text-justify leading-7 w-11/12 mx-auto">
+                <motion.a
+                  whileHover={{ scale: 1.2 }}
+                  href="https://github.com/aushah1">
+                  <AiOutlineGithub />
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ scale: 1.2 }}
+                  href="https://www.linkedin.com/in/aushahgw">
+                  <FaLinkedinIn />
+                </motion.a>
+              </div>
             </div>
 
             <div className="flex mt-10 items-center gap-7">
