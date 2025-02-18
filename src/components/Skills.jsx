@@ -63,7 +63,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           className="text-gray-900 dark:text-gray-100 font-medium text-lg text-center">
-          My expertise is in both Frontend and Backend. Here are some My
+          My expertise is in both Frontend and Backend. Here are some of My
           Professional Skills that helps you to present yourself in online world
         </motion.p>
       </motion.div>
