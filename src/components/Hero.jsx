@@ -112,14 +112,16 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <motion.img
-          src={profilepic}
-          className="w-[300px] md:w-[320px]"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        />
+        <motion.div className="popoUp w-[350px] md:w-[450px] flex items-center justify-center ">
+          <motion.img
+            src={profilepic}
+            className="w-[80%]"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          />
+        </motion.div>
       </div>
 
       <motion.div
