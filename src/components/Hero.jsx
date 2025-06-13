@@ -1,11 +1,10 @@
 import React from "react";
-import profilepic from "../assets/profpic.png";
+import profilepic from "../assets/profpic2.png";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
 import { AiOutlineGithub } from "react-icons/ai";
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from "react-icons/di";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
 import { RiTailwindCssLine } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 const techStack = [
@@ -114,7 +113,7 @@ const Hero = () => {
 
         <motion.div className="popoUp w-[350px] md:w-[450px] flex items-center justify-center ">
           <motion.img
-          loading="lazy"
+            loading="lazy"
             src={profilepic}
             alt="img"
             className="w-[80%]"
