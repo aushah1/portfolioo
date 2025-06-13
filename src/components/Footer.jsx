@@ -12,7 +12,7 @@ const Footer = () => {
       {/* Name & Social Links */}
       <div className="flex flex-col md:flex-row items-center gap-6">
         {/* Name with Gradient */}
-        <img src="/a.png" alt="" className="w-10 h-10 filter invert" />
+        <img loading="lazy" src="/a.png" alt="" className="w-10 h-10 filter invert" />
         <h3 className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
           Aushah Gowhar
         </h3>

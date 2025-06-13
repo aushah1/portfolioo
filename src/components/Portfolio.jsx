@@ -98,6 +98,7 @@ const Portfolio = () => {
             className="relative w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg group"
             whileHover={{ scale: 1.05 }}>
             <img
+              loading="lazy"
               src={project.img}
               alt={project.title}
               className="w-full h-full object-cover rounded-lg"

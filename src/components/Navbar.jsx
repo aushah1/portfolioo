@@ -37,7 +37,7 @@ const Navbar = () => {
         className="px-4 md:px-8 lg:px-16 mx-auto  flex justify-between text-gray-200
         text-xl items-center  h-20">
         <div className="flex items-center gap-3">
-          <img src="/a.png" alt="" className="w-10 h-10 filter invert" />
+          <img loading="lazy" src="/a.png" alt="" className="w-10 h-10 filter invert" />
           <a
             href="#"
             className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">

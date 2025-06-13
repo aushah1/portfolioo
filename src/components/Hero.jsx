@@ -114,7 +114,9 @@ const Hero = () => {
 
         <motion.div className="popoUp w-[350px] md:w-[450px] flex items-center justify-center ">
           <motion.img
+          loading="lazy"
             src={profilepic}
+            alt="img"
             className="w-[80%]"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
